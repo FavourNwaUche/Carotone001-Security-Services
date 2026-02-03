@@ -3,55 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Carotone001 Security</title>
+    <title>Services - Carotone001</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; background-color: #f4f4f4; }
-        header { background: #002e5d; color: white; padding: 1.5rem; text-align: center; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
+        header { background: #002e5d; color: white; padding: 20px; text-align: center; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        
-        /* Catalogue Styles */
-        .catalog-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; }
-        .product-card { width: 300px; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; padding-bottom: 20px; }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
-        .price { font-size: 1.2rem; color: #002e5d; font-weight: bold; margin: 10px 0; }
-        .order-btn { background: #002e5d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        h2 { text-align: center; color: #002e5d; }
+
+        /* Catalog Grid */
+        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: 0.3s; padding-bottom: 20px; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card h3 { margin: 15px 0 10px; color: #002e5d; }
+        .card p { font-size: 0.9rem; color: #666; padding: 0 15px; }
+        .price { font-size: 1.2rem; font-weight: bold; color: #002e5d; margin: 10px 0; }
+        .btn { background: #002e5d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🛡️ Our Security Catalogue</h1>
+    <h1>Carotone001 Security Services</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="services.html" style="border-bottom: 2px solid white;">Services</a>
+        <a href="services.html">Our Catalogue</a>
     </nav>
 </header>
 
-<div class="catalog-container">
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=CCTV+Camera" alt="CCTV">
-        <h3>HD Surveillance Kit</h3>
-        <p style="padding: 0 15px;">4-Channel 1080p system with night vision.</p>
-        <p class="price">₦55,000</p>
-        <button class="order-btn" onclick="openChat()">Enquire Now</button>
-    </div>
+<div class="container">
+    <h2>Available Equipment & Services</h2>
+    <div class="catalog">
 
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Security+Guard" alt="Guarding">
-        <h3>Personal Guarding</h3>
-        <p style="padding: 0 15px;">Trained security personnel for residential/events.</p>
-        <p class="price">Contact for Quote</p>
-        <button class="order-btn" onclick="openChat()">Enquire Now</button>
+        <div class="card">
+            <img src="images/IMG_6553.png" alt="Security Product 1">
+            <h3>Premium Security Asset</h3>
+            <p>Advanced security solution tailored for high-protection requirements.</p>
+            <p class="price">₦ Price On Request</p>
+            <button class="btn" onclick="openChat()">Order via Chat</button>
+        </div>
+
+        <div class="card">
+            <img src="images/IMG_6554.jpeg" alt="Security Product 2">
+            <h3>Surveillance System</h3>
+            <p>Reliable monitoring and surveillance for residential or commercial use.</p>
+            <p class="price">₦ Price On Request</p>
+            <button class="btn" onclick="openChat()">Order via Chat</button>
+        </div>
+
+        <div class="card">
+            <img src="images/IMG_6555.png" alt="Security Product 3">
+            <h3>Smart Access Control</h3>
+            <p>Modern entry management systems to keep your premises secure.</p>
+            <p class="price">₦ Price On Request</p>
+            <button class="btn" onclick="openChat()">Order via Chat</button>
+        </div>
+
+        <div class="card">
+            <img src="images/IMG_6556.jpeg" alt="Security Product 4">
+            <h3>Professional Guarding</h3>
+            <p>Trained personnel ready to protect your home or business 24/7.</p>
+            <p class="price">₦ Price On Request</p>
+            <button class="btn" onclick="openChat()">Order via Chat</button>
+        </div>
+
     </div>
 </div>
 
 <script>
     function openChat() {
-        // This forces the HubSpot chat to open when they click "Enquire"
-        if (window.HubSpotConversations) {
+        if (window.HubSpotConversations && window.HubSpotConversations.widget) {
             window.HubSpotConversations.widget.open();
+        } else {
+            alert("Chat is loading... Please try again in a second!");
         }
     }
 </script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147687314.js"></script>
 </body>
 </html>
